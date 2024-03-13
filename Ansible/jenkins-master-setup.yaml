@@ -5,22 +5,22 @@
   - name: add jenkins key 
     apt_key: 
       url:  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-      state: present 
+      state: absent 
 
   - name: add jenkins repo 
     apt_repository: 
       repo: 'deb https://pkg.jenkins.io/debian-stable binary/'
-      state: present 
+      state: absent 
 
   - name: install java 
     apt: 
       name: openjdk-11-jre
-      state: present
+      state: absent
 
   - name: install jenkins 
     apt: 
       name: jenkins 
-      state: present 
+      state: absent 
 
   - name: start jenkins service 
     service: 
